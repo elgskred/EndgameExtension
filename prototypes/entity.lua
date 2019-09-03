@@ -1680,7 +1680,7 @@ cryogenic_plant.animation = make_4way_animation_from_spritesheet({ layers =
         shift = util.by_pixel(-5, -4.5),
       },
       {
-        filename = "__base__/graphics/entity/chemical-plant/chemical-plant-shadow.png",
+        filename = "__EndgameExtension__/graphics/entity/cryogenic-plant/chemical-plant-shadow.png",
         width = 175,
         height = 141,
         frame_count = 1,
@@ -2107,7 +2107,7 @@ cooling_plant.animation = make_4way_animation_from_spritesheet({ layers =
         shift = util.by_pixel(-5, -4.5),
       },
       {
-        filename = "__base__/graphics/entity/chemical-plant/chemical-plant-shadow.png",
+        filename = "__EndgameExtension__/graphics/entity/cryogenic-plant/chemical-plant-shadow.png",
         width = 175,
         height = 141,
         frame_count = 1,
