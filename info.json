@@ -1,10 +1,10 @@
 {
   "name": "EndgameExtension",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "factorio_version": "0.17",
   "title": "Elgskred's Endgame Extension Mod",
   "author": "Elgskred",
   "contact": "YellowPages",
   "homepage": "http://www.factorio.com",
-  "description": "Add later."
+  "description": "Adding several new tiers of production machines, new ores, science packs and some new beacon functionality."
 }

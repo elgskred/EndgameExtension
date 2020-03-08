@@ -2121,9 +2121,11 @@ data:extend({cooling_plant})
 dense_steam_turbine = table.deepcopy(data.raw["generator"]["steam-turbine"])
 dense_steam_turbine.name = "dense-steam-turbine"
 dense_steam_turbine.minable = {mining_time = 0.5, result = "dense-steam-turbine"}
-dense_steam_turbine.maximum_temperature = 1000
+dense_steam_turbine.maximum_temperature = 25
 dense_steam_turbine.effectivity = 3.384
 dense_steam_turbine.fluid_usage_per_tick = 0.5
+dense_steam_turbine.burns_fluid = true
+dense_steam_turbine.maximum_power_output = "1GW"
 dense_steam_turbine.fluid_box = {
       base_area = 1,
       height = 2,
@@ -2136,7 +2138,7 @@ dense_steam_turbine.fluid_box = {
       },
       production_type = "input-output",
       filter = "dense-steam",
-      minimum_temperature = 100.0
+      minimum_temperature = 15
     }
 
 
@@ -2146,7 +2148,7 @@ data:extend({dense_steam_turbine})
 mineral_heat_exchanger = table.deepcopy(data.raw["boiler"]["heat-exchanger"])
 mineral_heat_exchanger.name = "mineral-heat-exchanger"
 mineral_heat_exchanger.minable = {mining_time = 0.3, result = "mineral-heat-exchanger"}
-mineral_heat_exchanger.target_temperature = 1000
+mineral_heat_exchanger.target_temperature = 750
 mineral_heat_exchanger.energy_consumption = "20MW"
 mineral_heat_exchanger.fluid_box =
     {
@@ -2174,6 +2176,162 @@ mineral_heat_exchanger.output_fluid_box =
       },
       production_type = "input-output",
       filter = "molten-mineral-oil"
+    }
+mineral_heat_exchanger.energy_source = 
+    {
+      type = "heat",
+      max_temperature = 1000,
+      specific_heat = "200MJ",
+      max_transfer = "20GW",
+      min_working_temperature = 750,
+      minimum_glow_temperature = 500,
+      connections =
+      {
+        {
+          position = {0, 0.5},
+          direction = defines.direction.south
+        }
+      },
+      pipe_covers =
+        make_4way_animation_from_spritesheet(
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-endings.png",
+          width = 32,
+          height = 32,
+          direction_count = 4,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-endings.png",
+            width = 64,
+            height = 64,
+            direction_count = 4,
+            scale = 0.5
+          }
+        }),
+      heat_pipe_covers =
+        make_4way_animation_from_spritesheet(
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-endings-heated.png",
+          width = 32,
+          height = 32,
+          direction_count = 4,
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-endings-heated.png",
+            width = 64,
+            height = 64,
+            direction_count = 4,
+            scale = 0.5
+          }
+        }),
+      heat_picture =
+      {
+        north =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-N-heated.png",
+          priority = "extra-high",
+          width = 24,
+          height = 48,
+          shift = util.by_pixel(-1, 8),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-N-heated.png",
+            priority = "extra-high",
+            width = 44,
+            height = 96,
+            shift = util.by_pixel(-0.5, 8.5),
+            scale = 0.5
+          }
+        },
+        east =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-E-heated.png",
+          priority = "extra-high",
+          width = 40,
+          height = 40,
+          shift = util.by_pixel(-21, -13),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-E-heated.png",
+            priority = "extra-high",
+            width = 80,
+            height = 80,
+            shift = util.by_pixel(-21, -13),
+            scale = 0.5
+          }
+        },
+        south =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-S-heated.png",
+          priority = "extra-high",
+          width = 16,
+          height = 20,
+          shift = util.by_pixel(-1, -30),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-S-heated.png",
+            priority = "extra-high",
+            width = 28,
+            height = 40,
+            shift = util.by_pixel(-1, -30),
+            scale = 0.5
+          }
+        },
+        west =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-W-heated.png",
+          priority = "extra-high",
+          width = 32,
+          height = 40,
+          shift = util.by_pixel(23, -13),
+          hr_version =
+          {
+            filename = "__base__/graphics/entity/heat-exchanger/hr-heatex-W-heated.png",
+            priority = "extra-high",
+            width = 64,
+            height = 76,
+            shift = util.by_pixel(23, -13),
+            scale = 0.5
+          }
+        },
+      },
+      heat_glow =
+      {
+        north =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-N-glow.png",
+          priority = "extra-high",
+          width = 38,
+          height = 70,
+          tint = heat_glow_tint,
+          shift = util.by_pixel(0, 8)
+        },
+        east =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-E-glow.png",
+          priority = "extra-high",
+          width = 60,
+          height = 62,
+          shift = util.by_pixel(-22, -12)
+        },
+        south =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-S-glow.png",
+          priority = "extra-high",
+          width = 38,
+          height = 40,
+          tint = heat_glow_tint,
+          shift = util.by_pixel(0, -36)
+        },
+        west =
+        {
+          filename = "__base__/graphics/entity/heat-exchanger/heatex-W-glow.png",
+          priority = "extra-high",
+          width = 60,
+          height = 64,
+          shift = util.by_pixel(20, -12)
+        },
+      }
     }
 
 data:extend({mineral_heat_exchanger})
