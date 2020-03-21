@@ -2493,6 +2493,14 @@ data:extend({substation_3})
 
 refinery_2 = table.deepcopy(data.raw["assembling-machine"]["oil-refinery"])
 refinery_2.name = "refinery-2"
+refinery_2.minable = {mining_time = 0.5, result = "refinery-2"}
+refinery_2.energy_usage = "1000kW"
+refinery_2.energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = 10
+    }
 refinery_2.module_specification =
     {
       module_slots = 5
@@ -2503,16 +2511,32 @@ data:extend({refinery_2})
 
 refinery_3 = table.deepcopy(data.raw["assembling-machine"]["oil-refinery"])
 refinery_3.name = "refinery-3"
+refinery_3.minable = {mining_time = 0.5, result = "refinery-3"}
+refinery_3.energy_usage = "4000kW"
+refinery_3.energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = 22
+    }
 refinery_3.module_specification =
     {
       module_slots = 6
     }
-refinery_2.crafting_speed = 3
+refinery_3.crafting_speed = 3
 
 data:extend({refinery_3})
 
 centrifuge_2 = table.deepcopy(data.raw["assembling-machine"]["centrifuge"])
 centrifuge_2.name = "centrifuge-2"
+centrifuge_2.minable = {mining_time = 0.5, result = "centrifuge-2"}
+centrifuge_2.energy_usage = "950kW"
+centrifuge_2.energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = 8
+    }
 centrifuge_2.module_specification =
     {
       module_slots = 5
@@ -2523,30 +2547,54 @@ data:extend({centrifuge_2})
 
 centrifuge_3 = table.deepcopy(data.raw["assembling-machine"]["centrifuge"])
 centrifuge_3.name = "centrifuge-3"
+centrifuge_3.minable = {mining_time = 0.5, result = "centrifuge-3"}
+centrifuge_3.energy_usage = "4250kW"
+centrifuge_3.energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = 16
+    }
 centrifuge_3.module_specification =
     {
       module_slots = 6
     }
-centrifuge_2.crafting_speed = 3
+centrifuge_3.crafting_speed = 3
 
 data:extend({centrifuge_3})
 
 pumpjack_2 = table.deepcopy(data.raw["mining-drill"]["pumpjack"])
 pumpjack_2.name = "pumpjack-2"
+pumpjack_2.minable = {mining_time = 0.5, result = "pumpjack-2"}
+pumpjack_2.energy_usage = "250kW"
+pumpjack_2.energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = 8
+    }
 pumpjack_2.module_specification =
     {
       module_slots = 5
     }
-pumpjack_2.crafting_speed = 2
+pumpjack_2.mining_speed = 2
 
 data:extend({pumpjack_2})
 
 pumpjack_3 = table.deepcopy(data.raw["mining-drill"]["pumpjack"])
 pumpjack_3.name = "pumpjack-3"
+pumpjack_3.energy_usage = "750kW"
+pumpjack_3.minable = {mining_time = 0.5, result = "pumpjack-3"}
+pumpjack_3.energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = 18
+    }
 pumpjack_3.module_specification =
     {
       module_slots = 6
     }
-pumpjack_2.crafting_speed = 3
+pumpjack_3.mining_speed = 3
 
 data:extend({pumpjack_3})

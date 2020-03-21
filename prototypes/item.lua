@@ -1081,7 +1081,7 @@ data:extend({
     icon = "__base__/graphics/icons/oil-refinery.png",
     icon_size = 32,
     subgroup = "production-machine",
-    order = "d[refinery]",
+    order = "da[refinery]",
     place_result = "refinery-2",
     stack_size = 10
   	},
@@ -1091,7 +1091,7 @@ data:extend({
     icon = "__base__/graphics/icons/oil-refinery.png",
     icon_size = 32,
     subgroup = "production-machine",
-    order = "d[refinery-2]",
+    order = "db[refinery]",
     place_result = "refinery-3",
     stack_size = 10
   	},
@@ -1101,7 +1101,7 @@ data:extend({
     icon = "__base__/graphics/icons/centrifuge.png",
     icon_size = 32,
     subgroup = "production-machine",
-    order = "d[centrifuge]",
+    order = "ga[centrifuge]",
     place_result = "centrifuge-2",
     stack_size = 10
   	},
@@ -1111,7 +1111,7 @@ data:extend({
     icon = "__base__/graphics/icons/centrifuge.png",
     icon_size = 32,
     subgroup = "production-machine",
-    order = "d[centrifuge-2]",
+    order = "gb[centrifuge]",
     place_result = "centrifuge-3",
     stack_size = 10
   	},
@@ -1121,7 +1121,7 @@ data:extend({
     icon = "__base__/graphics/icons/pumpjack.png",
     icon_size = 32,
     subgroup = "extraction-machine",
-    order = "d[pumpjack]",
+    order = "ef[pumpjack]",
     place_result = "pumpjack-2",
     stack_size = 10
   	},
@@ -1131,7 +1131,7 @@ data:extend({
     icon = "__base__/graphics/icons/pumpjack.png",
     icon_size = 32,
     subgroup = "extraction-machine",
-    order = "d[pumpjack-2]",
+    order = "eg[pumpjack-2]",
     place_result = "pumpjack-3",
     stack_size = 10
   	},
