@@ -1120,7 +1120,7 @@ data:extend({
     name = "pumpjack-2",
     icon = "__base__/graphics/icons/pumpjack.png",
     icon_size = 32,
-    subgroup = "mining-drill",
+    subgroup = "extraction-machine",
     order = "d[pumpjack]",
     place_result = "pumpjack-2",
     stack_size = 10
@@ -1130,7 +1130,7 @@ data:extend({
     name = "pumpjack-3",
     icon = "__base__/graphics/icons/pumpjack.png",
     icon_size = 32,
-    subgroup = "mining-drill",
+    subgroup = "extraction-machine",
     order = "d[pumpjack-2]",
     place_result = "pumpjack-3",
     stack_size = 10
