@@ -2531,7 +2531,7 @@ centrifuge_2.crafting_speed = 3
 
 data:extend({centrifuge_3})
 
-pumpjack_2 = table.deepcopy(data.raw["minging-drill"]["pumpjack"])
+pumpjack_2 = table.deepcopy(data.raw["mining-drill"]["pumpjack"])
 pumpjack_2.name = "pumpjack-2"
 pumpjack_2.module_specification =
     {
@@ -2541,7 +2541,7 @@ pumpjack_2.crafting_speed = 2
 
 data:extend({pumpjack_2})
 
-pumpjack_3 = table.deepcopy(data.raw["minging-drill"]["pumpjack"])
+pumpjack_3 = table.deepcopy(data.raw["mining-drill"]["pumpjack"])
 pumpjack_3.name = "pumpjack-3"
 pumpjack_3.module_specification =
     {
