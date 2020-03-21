@@ -1773,7 +1773,7 @@ data:extend({
       {"stone-brick", 10},
       {"superconducted-electronics", 10},
       {"pipe", 10},
-      {"oil-refinery-2", 1}
+      {"refinery-2", 1}
     },
     result = "refinery-3",
     enabled = false
