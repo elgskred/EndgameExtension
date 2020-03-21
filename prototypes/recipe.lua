@@ -1715,6 +1715,100 @@ data:extend({
 		},
 		result = "compressed-science-pack"
 	},
+	{
+    type = "recipe",
+    name = "refinery-2",
+    energy_required = 8,
+    ingredients =
+    {
+      {"steel-plate", 15},
+      {"iron-gear-wheel", 10},
+      {"stone-brick", 10},
+      {"processing-unit", 10},
+      {"pipe", 10},
+      {"oil-refinery", 1}
+    },
+    result = "refinery-2",
+    enabled = false
+  	},
+  	{
+    type = "recipe",
+    name = "pumpjack-2",
+    energy_required = 5,
+    ingredients =
+    {
+      {"steel-plate", 5},
+      {"iron-gear-wheel", 10},
+      {"processing-unit", 5},
+      {"pipe", 10},
+      {"pumpjack", 1}
+    },
+    result = "pumpjack-2",
+    enabled = false
+  	},
+  	{
+    type = "recipe",
+    name = "centrifuge-2",
+    energy_required = 4,
+    enabled = false,
+    ingredients =
+    {
+      {"concrete", 100},
+      {"steel-plate", 50},
+      {"multi-layered-electronic-circuit", 100},
+      {"iron-gear-wheel", 100},
+      {"centrifuge", 1}
+    },
+    result = "centrifuge-2",
+    requester_paste_multiplier= 10
+  	},
+  	{
+    type = "recipe",
+    name = "refinery-3",
+    energy_required = 8,
+    ingredients =
+    {
+      {"steel-plate", 15},
+      {"titanium-gear-wheel", 10},
+      {"stone-brick", 10},
+      {"superconducted-electronics", 10},
+      {"pipe", 10},
+      {"oil-refinery-2", 1}
+    },
+    result = "refinery-3",
+    enabled = false
+  	},
+  	{
+    type = "recipe",
+    name = "pumpjack-3",
+    energy_required = 5,
+    ingredients =
+    {
+      {"steel-plate", 5},
+      {"titanium-gear-wheel", 10},
+      {"superconducted-electronics", 5},
+      {"pipe", 10},
+      {"pumpjack-2", 1}
+    },
+    result = "pumpjack-3",
+    enabled = false
+  	},
+  	{
+    type = "recipe",
+    name = "centrifuge-3",
+    energy_required = 4,
+    enabled = false,
+    ingredients =
+    {
+      {"concrete", 100},
+      {"titanium-plate", 50},
+      {"superconducted-electronics", 100},
+      {"iron-gear-wheel", 100},
+      {"centrifuge-2", 1}
+    },
+    result = "centrifuge-3",
+    requester_paste_multiplier= 10
+  	},
 
 
 

@@ -1075,6 +1075,66 @@ data:extend({
 	    place_result = "logistic-robot-4",
 	    stack_size = 50
   	},
+  	{
+    type = "item",
+    name = "refinery-2",
+    icon = "__base__/graphics/icons/oil-refinery.png",
+    icon_size = 32,
+    subgroup = "production-machine",
+    order = "d[refinery]",
+    place_result = "refinery-2",
+    stack_size = 10
+  	},
+  	{
+    type = "item",
+    name = "refinery-3",
+    icon = "__base__/graphics/icons/oil-refinery.png",
+    icon_size = 32,
+    subgroup = "production-machine",
+    order = "d[refinery-2]",
+    place_result = "refinery-3",
+    stack_size = 10
+  	},
+  	{
+    type = "item",
+    name = "centrifuge-2",
+    icon = "__base__/graphics/icons/centrifuge.png",
+    icon_size = 32,
+    subgroup = "production-machine",
+    order = "d[centrifuge]",
+    place_result = "centrifuge-2",
+    stack_size = 10
+  	},
+  	{
+    type = "item",
+    name = "centrifuge-3",
+    icon = "__base__/graphics/icons/centrifuge.png",
+    icon_size = 32,
+    subgroup = "production-machine",
+    order = "d[centrifuge-2]",
+    place_result = "centrifuge-3",
+    stack_size = 10
+  	},
+  	{
+    type = "item",
+    name = "pumpjack-2",
+    icon = "__base__/graphics/icons/pumpjack.png",
+    icon_size = 32,
+    subgroup = "mining-drill",
+    order = "d[pumpjack]",
+    place_result = "pumpjack-2",
+    stack_size = 10
+  	},
+  	{
+    type = "item",
+    name = "pumpjack-3",
+    icon = "__base__/graphics/icons/pumpjack.png",
+    icon_size = 32,
+    subgroup = "mining-drill",
+    order = "d[pumpjack-2]",
+    place_result = "pumpjack-3",
+    stack_size = 10
+  	},
   	
 
 

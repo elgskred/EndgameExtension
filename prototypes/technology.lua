@@ -1188,6 +1188,10 @@ data:extend(
       {
         type = "unlock-recipe",
         recipe = "chemical-plant-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "centrifuge-2"
       }
     },
     order = "i-a"
@@ -2314,6 +2318,18 @@ data:extend(
         type = "unlock-recipe",
         recipe = "mineral-oil"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "pumpjack-3"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "refinery-3"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "centrifuge-3"
+      },
     },
     prerequisites = {"ee-nuclear-power-3"},
     unit =
@@ -3368,6 +3384,37 @@ data:extend(
         {"advanced-space-science-pack", 1},
       },
       time = 60
+    },
+    upgrade = true,
+    order = "c-o-h"
+  },
+  {
+    type = "technology",
+    name = "advanced-oil-machinery",
+    icon = "__base__/graphics/technology/oil-processing.png",
+    icon_size = 128,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "refinery-2"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "pumpjack-2"
+      }
+    },
+    prerequisites = {"utility-science-pack"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
     },
     upgrade = true,
     order = "c-o-h"

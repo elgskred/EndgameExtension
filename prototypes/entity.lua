@@ -439,6 +439,11 @@ local lab_inputs_2 =
   "compressed-science-pack",
   "advanced-automation-science-pack",
   "advanced-logistic-science-pack",
+  "advanced-chemical-science-pack",
+  "advanced-utility-science-pack",
+  "advanced-production-science-pack",
+  "advanced-space-science-pack",
+
 }
 
 
@@ -2485,3 +2490,63 @@ substation_3.supply_area_distance = 13
 
 data:extend({substation_3})
 
+
+refinery_2 = table.deepcopy(data.raw["assembling-machine"]["refinery"])
+refinery_2.name = "refinery-2"
+refinery_2.module_specification =
+    {
+      module_slots = 5
+    }
+refinery_2.crafting_speed = 2
+
+data:extend({refinery_2})
+
+refinery_3 = table.deepcopy(data.raw["assembling-machine"]["refinery"])
+refinery_3.name = "refinery-3"
+refinery_3.module_specification =
+    {
+      module_slots = 6
+    }
+refinery_2.crafting_speed = 3
+
+data:extend({refinery_3})
+
+centrifuge_2 = table.deepcopy(data.raw["assembling-machine"]["centrifuge"])
+centrifuge_2.name = "centrifuge-2"
+centrifuge_2.module_specification =
+    {
+      module_slots = 5
+    }
+centrifuge_2.crafting_speed = 2
+
+data:extend({centrifuge_2})
+
+centrifuge_3 = table.deepcopy(data.raw["assembling-machine"]["centrifuge"])
+centrifuge_3.name = "centrifuge-3"
+centrifuge_3.module_specification =
+    {
+      module_slots = 6
+    }
+centrifuge_2.crafting_speed = 3
+
+data:extend({centrifuge_3})
+
+pumpjack_2 = table.deepcopy(data.raw["minging-drill"]["pumpjack"])
+pumpjack_2.name = "pumpjack-2"
+pumpjack_2.module_specification =
+    {
+      module_slots = 5
+    }
+pumpjack_2.crafting_speed = 2
+
+data:extend({pumpjack_2})
+
+pumpjack_3 = table.deepcopy(data.raw["minging-drill"]["pumpjack"])
+pumpjack_3.name = "pumpjack-3"
+pumpjack_3.module_specification =
+    {
+      module_slots = 6
+    }
+pumpjack_2.crafting_speed = 3
+
+data:extend({pumpjack_3})
