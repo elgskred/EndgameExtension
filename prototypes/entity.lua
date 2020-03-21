@@ -2491,7 +2491,7 @@ substation_3.supply_area_distance = 13
 data:extend({substation_3})
 
 
-refinery_2 = table.deepcopy(data.raw["assembling-machine"]["refinery"])
+refinery_2 = table.deepcopy(data.raw["assembling-machine"]["oil-refinery"])
 refinery_2.name = "refinery-2"
 refinery_2.module_specification =
     {
@@ -2501,7 +2501,7 @@ refinery_2.crafting_speed = 2
 
 data:extend({refinery_2})
 
-refinery_3 = table.deepcopy(data.raw["assembling-machine"]["refinery"])
+refinery_3 = table.deepcopy(data.raw["assembling-machine"]["oil-refinery"])
 refinery_3.name = "refinery-3"
 refinery_3.module_specification =
     {
