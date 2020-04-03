@@ -121,7 +121,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "speed",
-    tier = 1,
+    tier = 4,
     order = "a[speed]-da[speed-module-3]",
     stack_size = 50,
     effect = {
@@ -136,7 +136,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "speed",
-    tier = 1,
+    tier = 5,
     order = "a[speed]-db[speed-module-3]",
     stack_size = 50,
     effect = {
@@ -151,7 +151,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "speed",
-    tier = 1,
+    tier = 6,
     order = "a[speed]-dc[speed-module-3]",
     stack_size = 50,
     effect = {
@@ -166,7 +166,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "speed",
-    tier = 1,
+    tier = 7,
     order = "a[speed]-dc[speed-module-3]",
     stack_size = 50,
     effect = {
@@ -181,7 +181,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "effectivity",
-    tier = 3,
+    tier = 4,
     order = "c[effectivity]-da[effectivity-module-3]",
     stack_size = 50,
     effect = { 
@@ -196,7 +196,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "effectivity",
-    tier = 3,
+    tier = 5,
     order = "c[effectivity]-db[effectivity-module-3]",
     stack_size = 50,
     effect = { 
@@ -211,7 +211,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "effectivity",
-    tier = 3,
+    tier = 6,
     order = "c[effectivity]-dc[effectivity-module-3]",
     stack_size = 50,
     effect = { 
@@ -226,7 +226,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "effectivity",
-    tier = 3,
+    tier = 7,
     order = "c[effectivity]-dc[effectivity-module-3]",
     stack_size = 50,
     effect = { 
@@ -241,7 +241,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "productivity",
-    tier = 1,
+    tier = 4,
     order = "c[productivity]-da[productivity-module-3]",
     stack_size = 50,
     effect =
@@ -260,7 +260,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "productivity",
-    tier = 1,
+    tier = 5,
     order = "c[productivity]-db[productivity-module-3]",
     stack_size = 50,
     effect =
@@ -279,7 +279,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "productivity",
-    tier = 1,
+    tier = 6,
     order = "c[productivity]-dc[productivity-module-3]",
     stack_size = 50,
     effect =
@@ -298,7 +298,7 @@ data:extend(
     icon_size = 32,
     subgroup = "module",
     category = "productivity",
-    tier = 1,
+    tier = 7,
     order = "c[productivity]-dc[productivity-module-3]",
     stack_size = 50,
     effect =

@@ -1,0 +1,8 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 03. 04. 2020
+  Changes:
+    - Added fast replace group to most entities.
+    - Changed recipe for high speed inserters to use previous tier inserters.
+    - Increased the rotation speed of ultimate inserters.
+---------------------------------------------------------------------------------------------------

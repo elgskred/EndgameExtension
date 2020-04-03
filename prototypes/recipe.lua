@@ -905,8 +905,9 @@ data:extend({
 	    enabled = false,
 	    ingredients =
 	    {
-	      {"high-speed-long-handed-inserter", 1},
-	      {"multi-layered-electronic-circuit", 5}
+	      {"fast-inserter", 1},
+	      {"multi-layered-electronic-circuit", 5},
+	      {"aluminum-plate", 10}
 	    },
 	    result = "high-speed-stack-filter-inserter"
   	},
@@ -918,7 +919,7 @@ data:extend({
 	    {
 	      {"iron-gear-wheel", 1},
 	      {"aluminum-plate", 1},
-	      {"fast-inserter", 10}
+	      {"long-handed-inserter", 10}
 	    },
 	    result = "high-speed-long-handed-inserter"
   	},

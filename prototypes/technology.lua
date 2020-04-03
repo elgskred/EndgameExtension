@@ -3390,7 +3390,7 @@ data:extend(
   },
   {
     type = "technology",
-    name = "advanced-oil-machinery",
+    name = "ee-advanced-oil-machinery",
     icon = "__base__/graphics/technology/oil-processing.png",
     icon_size = 128,
     effects =

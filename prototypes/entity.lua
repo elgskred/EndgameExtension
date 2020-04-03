@@ -446,9 +446,12 @@ local lab_inputs_2 =
 
 }
 
+data.raw["lab"]["lab"].next_upgrade = "lab-mk2"
+data.raw["lab"]["lab"].fast_replaceable_group = "lab"
 
 lab_mk2 = table.deepcopy(data.raw["lab"]["lab"])
 lab_mk2.name = "lab-mk2"
+lab_mk2.next_upgrade = "lab-mk3"
 lab_mk2.minable = {mining_time = 0.2, result = "lab-mk2"}
 lab_mk2.max_health = 200
 lab_mk2.energy_usage = "120kW"
@@ -479,10 +482,12 @@ lab_mk3.inputs = lab_inputs_2
 
 data:extend({lab_mk3})
 
-
+data.raw["roboport"]["roboport"].next_upgrade = "roboport-2"
+data.raw["roboport"]["roboport"].fast_replaceable_group = "roboport"
 
 roboport_mk2 = table.deepcopy(data.raw["roboport"]['roboport'])
 roboport_mk2.name = "roboport-2"
+roboport_mk2.next_upgrade = "roboport-3"
 roboport_mk2.minable = {mining_time = 0.1, result = "roboport-2"}
 roboport_mk2.max_health = 750
 roboport_mk2.energy_source =
@@ -497,6 +502,7 @@ roboport_mk2.energy_usage = "30kW"
 roboport_mk2.charging_energy = "2000kW"
 roboport_mk2.logistics_radius = 50
 roboport_mk2.construction_radius = 110
+roboport_mk2.fast_replaceable_group = "roboport"
 
 data:extend({roboport_mk2})
 
@@ -516,6 +522,7 @@ roboport_mk3.energy_usage = "60kW"
 roboport_mk3.charging_energy = "10000kW"
 roboport_mk3.logistics_radius = 100
 roboport_mk3.construction_radius = 200
+roboport_mk3.fast_replaceable_group = "roboport"
 
 data:extend({roboport_mk3})
 
@@ -908,18 +915,26 @@ pipepictures_a = function()
   }
 end
 
+data.raw["pipe"]["pipe"].next_upgrade = "aluminum-pipe"
+
 aluminum_pipe = table.deepcopy(data.raw["pipe"]["pipe"])
 aluminum_pipe.name = "aluminum-pipe"
 aluminum_pipe.icon = "__EndgameExtension__/graphics/icons/aluminum-pipe.png"
 aluminum_pipe.minable = {mining_time = 0.1, result = "aluminum-pipe"}
+aluminum_pipe.next_upgrade = "titanium-pipe"
+aluminum_pipe.fast_replaceable_group = "pipe"
 aluminum_pipe.pictures = pipepictures_a()
 
 data:extend({aluminum_pipe})
+
+data.raw["pipe-to-ground"]["pipe-to-ground"].next_upgrade = "aluminum-pipe-to-ground"
 
 aluminum_pipe_to_ground = table.deepcopy(data.raw["pipe-to-ground"]["pipe-to-ground"])
 aluminum_pipe_to_ground.name = "aluminum-pipe-to-ground"
 aluminum_pipe_to_ground.icon = "__EndgameExtension__/graphics/icons/aluminum-pipe-to-ground.png"
 aluminum_pipe_to_ground.minable = {mining_time = 0.1, result = "aluminum-pipe-to-ground"}
+aluminum_pipe_to_ground.fast_replaceable_group = "pipe"
+aluminum_pipe_to_ground.next_upgrade = "titanium-pipe-to-ground"
 aluminum_pipe_to_ground.fluid_box =
     {
       base_area = 1,
@@ -1157,6 +1172,7 @@ titanium_pipe = table.deepcopy(data.raw["pipe"]["pipe"])
 titanium_pipe.name = "titanium-pipe"
 titanium_pipe.icon = "__EndgameExtension__/graphics/icons/titanium-pipe.png"
 titanium_pipe.minable = {mining_time = 0.1, result = "titanium-pipe"}
+titanium_pipe.fast_replaceable_group = "pipe"
 titanium_pipe.pictures = pipepictures_t()
 
 data:extend({titanium_pipe})
@@ -1165,6 +1181,7 @@ titanium_pipe_to_ground = table.deepcopy(data.raw["pipe-to-ground"]["pipe-to-gro
 titanium_pipe_to_ground.name = "titanium-pipe-to-ground"
 titanium_pipe_to_ground.icon = "__EndgameExtension__/graphics/icons/titanium-pipe-to-ground.png"
 titanium_pipe_to_ground.minable = {mining_time = 0.1, result = "titanium-pipe-to-ground"}
+titanium_pipe_to_ground.fast_replaceable_group = "pipe"
 titanium_pipe_to_ground.fluid_box =
     {
       base_area = 1,
@@ -1213,9 +1230,13 @@ titanium_pipe_to_ground.pictures =
 
 data:extend({titanium_pipe_to_ground})
 
+data.raw["assembling-machine"]["chemical-plant"].next_upgrade = "chemical-plant-2"
+data.raw["assembling-machine"]["chemical-plant"].fast_replaceable_group = "chemical-plant"
+
 chemical_plant_2 = table.deepcopy(data.raw["assembling-machine"]["chemical-plant"])
 chemical_plant_2.name = "chemical-plant-2"
 chemical_plant_2.minable = {mining_time = 0.1, result = "chemical-plant-2"}
+chemical_plant_2.next_upgrade = "chemical-plant-3"
 chemical_plant_2.module_specification =
     {
       module_slots = 4
@@ -1249,9 +1270,11 @@ chemical_plant_3.energy_source =
 
 data:extend({chemical_plant_3})
 
+data.raw["mining-drill"]["electric-mining-drill"].next_upgrade = "electric-mining-drill-2"
 
 electric_mining_drill_2 = table.deepcopy(data.raw["mining-drill"]["electric-mining-drill"])
 electric_mining_drill_2.name = "electric-mining-drill-2"
+electric_mining_drill_2.next_upgrade = "electric-mining-drill-3"
 electric_mining_drill_2.minable = {mining_time = 0.3, result = "electric-mining-drill-2"}
 electric_mining_drill_2.module_specification =
     {
@@ -1271,6 +1294,7 @@ data:extend({electric_mining_drill_2})
 
 electric_mining_drill_3 = table.deepcopy(data.raw["mining-drill"]["electric-mining-drill"])
 electric_mining_drill_3.name = "electric-mining-drill-3"
+electric_mining_drill_3.next_upgrade = "electric-mining-drill-4"
 electric_mining_drill_3.minable = {mining_time = 0.3, result = "electric-mining-drill-3"}
 electric_mining_drill_3.module_specification =
     {
@@ -1290,6 +1314,7 @@ data:extend({electric_mining_drill_3})
 
 electric_mining_drill_4 = table.deepcopy(data.raw["mining-drill"]["electric-mining-drill"])
 electric_mining_drill_4.name = "electric-mining-drill-4"
+electric_mining_drill_4.next_upgrade = "electric-mining-drill-5"
 electric_mining_drill_4.minable = {mining_time = 0.3, result = "electric-mining-drill-4"}
 electric_mining_drill_4.module_specification =
     {
@@ -1326,8 +1351,14 @@ electric_mining_drill_5.resource_searching_radius = 5.49
 
 data:extend({electric_mining_drill_5})
 
+
+data.raw["beacon"]["beacon"].next_upgrade = "beacon-2"
+data.raw["beacon"]["beacon"].fast_replaceable_group = "beacon"
+
 beacon_2 = table.deepcopy(data.raw["beacon"]["beacon"])
 beacon_2.name = "beacon-2"
+beacon_2.next_upgrade = "beacon-3"
+beacon_2.fast_replaceable_group = "beacon"
 beacon_2.minable = {mining_time = 0.5, result = "beacon-2"}
 beacon_2.energy_usage = "620kW"
 beacon_2.supply_area_distance = 5
@@ -1343,6 +1374,7 @@ data:extend({beacon_2})
 
 beacon_3 = table.deepcopy(data.raw["beacon"]["beacon"])
 beacon_3.name = "beacon-3"
+beacon_3.fast_replaceable_group = "beacon"
 beacon_3.minable = {mining_time = 0.5, result = "beacon-3"}
 beacon_3.energy_usage = "840W"
 beacon_3.supply_area_distance = 7
@@ -1356,9 +1388,11 @@ beacon_3.module_specification =
 
 data:extend({beacon_3})
 
+data.raw["furnace"]["electric-furnace"].next_upgrade ="electric-furnace-2"
 
 electric_furnace_2 = table.deepcopy(data.raw["furnace"]["electric-furnace"])
 electric_furnace_2.name = "electric-furnace-2"
+electric_furnace_2.next_upgrade = "electric-furnace-3"
 electric_furnace_2.minable = {mining_time = 0.2, result = "electric-furnace-2"}
 electric_furnace_2.module_specification =
     {
@@ -1402,6 +1436,7 @@ assembling_machine_4 = table.deepcopy(data.raw["assembling-machine"]["assembling
 assembling_machine_4.name = "assembling-machine-4"
 assembling_machine_4.minable = {mining_time = 0.3, result = "assembling-machine-4"}
 assembling_machine_4.next_upgrade = "assembling-machine-5"
+assembling_machine_4.fast_replaceable_group = "assembling-machine"
 assembling_machine_4.module_specification =
     {
       module_slots = 5
@@ -1456,6 +1491,7 @@ data:extend({assembling_machine_4})
 
 assembling_machine_5 = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-3"])
 assembling_machine_5.name = "assembling-machine-5"
+assembling_machine_5.fast_replaceable_group = "assembling-machine"
 assembling_machine_5.minable = {mining_time = 0.3, result = "assembling-machine-5"}
 assembling_machine_5.module_specification =
     {
@@ -1509,9 +1545,13 @@ assembling_machine_5.animation =
 
 data:extend({assembling_machine_5})
 
+data.raw["rocket-silo"]["rocket-silo"].next_upgrade = "rocket-silo-2"
+data.raw["rocket-silo"]["rocket-silo"].fast_replaceable_group = "rocket-silo"
 
 rocket_silo_2 = table.deepcopy(data.raw["rocket-silo"]["rocket-silo"])
 rocket_silo_2.name = "rocket-silo-2"
+rocket_silo_2.next_upgrade = "rocket-silo-3"
+rocket_silo_2.fast_replaceable_group = "rocket-silo"
 rocket_silo_2.minable = {mining_time = 1, result = "rocket-silo-2"}
 rocket_silo_2.module_specification =
     {
@@ -1541,6 +1581,7 @@ data:extend({rocket_silo_rocket_2})
 
 rocket_silo_3 = table.deepcopy(data.raw["rocket-silo"]["rocket-silo"])
 rocket_silo_3.name = "rocket-silo-3"
+rocket_silo_3.fast_replaceable_group = "rocket-silo"
 rocket_silo_3.minable = {mining_time = 1, result = "rocket-silo-3"}
 rocket_silo_3.module_specification =
     {
@@ -1573,6 +1614,7 @@ data.raw["inserter"]["long-handed-inserter"].next_upgrade = "high-speed-long-han
 
 high_speed_stack_filter_inserter = table.deepcopy(data.raw["inserter"]["stack-filter-inserter"])
 high_speed_stack_filter_inserter.name = "high-speed-stack-filter-inserter"
+high_speed_stack_filter_inserter.fast_replaceable_group = "inserter"
 high_speed_stack_filter_inserter.icon = "__EndgameExtension__/graphics/icons/high-speed-stack-filter-inserter.png"
 high_speed_stack_filter_inserter.minable = { mining_time = 0.1, result = "high-speed-stack-filter-inserter" }
 high_speed_stack_filter_inserter.energy_per_movement = "15KJ"
@@ -1615,6 +1657,7 @@ data:extend({high_speed_stack_filter_inserter})
 high_speed_long_handed_inserter = table.deepcopy(data.raw["inserter"]["long-handed-inserter"])
 high_speed_long_handed_inserter.icon = "__EndgameExtension__/graphics/icons/high-speed-long-handed-inserter.png"
 high_speed_long_handed_inserter.name = "high-speed-long-handed-inserter"
+high_speed_long_handed_inserter.fast_replaceable_group = "long-handed-inserter"
 high_speed_long_handed_inserter.minable = {mining_time = 0.1, result = "high-speed-long-handed-inserter"}
 high_speed_long_handed_inserter.energy_per_movement = "10KJ"
 high_speed_long_handed_inserter.energy_per_rotation = "10KJ"
@@ -1696,8 +1739,12 @@ cryogenic_plant.animation = make_4way_animation_from_spritesheet({ layers =
 
 data:extend({cryogenic_plant})
 
+data.raw["solar-panel"]["solar-panel"].next_upgrade = "solar-panel-2"
+data.raw["solar-panel"]["solar-panel"].fast_replaceable_group = "solar-panel"
+
 solar_panel_2 = table.deepcopy(data.raw["solar-panel"]["solar-panel"])
 solar_panel_2.name = "solar-panel-2"
+solar_panel_2.next_upgrade = "solar-panel-3"
 solar_panel_2.minable = {mining_time = 0.3, result = "solar-panel-2"}
 solar_panel_2.production = "240kW"
 
@@ -1705,6 +1752,7 @@ data:extend({solar_panel_2})
 
 solar_panel_3 = table.deepcopy(data.raw["solar-panel"]["solar-panel"])
 solar_panel_3.name = "solar-panel-3"
+solar_panel_3.next_upgrade = "solar-panel-4"
 solar_panel_3.minable = {mining_time = 0.3, result = "solar-panel-3"}
 solar_panel_3.production = "960kW"
 
@@ -1712,6 +1760,7 @@ data:extend({solar_panel_3})
 
 solar_panel_4 = table.deepcopy(data.raw["solar-panel"]["solar-panel"])
 solar_panel_4.name = "solar-panel-4"
+solar_panel_4.next_upgrade = "solar-panel-5"
 solar_panel_4.minable = {mining_time = 0.3, result = "solar-panel-4"}
 solar_panel_4.production = "3.8MW"
 
@@ -1725,16 +1774,22 @@ solar_panel_5.production = "15.2MW"
 data:extend({solar_panel_5})
 
 data.raw["generator"]["steam-turbine"].maximum_temperature = 431.5
+data.raw["generator"]["steam-turbine"].next_upgrade = "steam-turbine-2"
 
 steam_turbine_2 = table.deepcopy(data.raw["generator"]["steam-turbine"])
 steam_turbine_2.name = "steam-turbine-2"
+steam_turbine_2.next_upgrade = "steam-turbine-3"
 steam_turbine_2.minable = {mining_time = 0.5, result = "steam-turbine-2"}
 steam_turbine_2.maximum_temperature = 848
 
 data:extend({steam_turbine_2})
 
+data.raw["boiler"]["heat-exchanger"].next_upgrade = "heat-exchanger-2"
+data.raw["boiler"]["heat-exchanger"].fast_replaceable_group = "boiler"
+
 heat_exchanger_2 = table.deepcopy(data.raw["boiler"]["heat-exchanger"])
 heat_exchanger_2.name = "heat-exchanger-2"
+heat_exchanger_2.next_upgrade = "heat-exchanger-3"
 heat_exchanger_2.minable = {mining_time = 0.3, result = "heat-exchanger-2"}
 heat_exchanger_2.target_temperature = 850
 heat_exchanger_2.energy_consumption = "20MW"
@@ -1863,7 +1918,6 @@ ultimate_transport_belt.animations =
     }
 data:extend({ultimate_transport_belt})
 
-data.raw["underground-belt"]["express-underground-belt"].next_upgrade = "ultimate-underground-belt"
 
 ultimate_underground_belt = table.deepcopy(data.raw["underground-belt"]["express-underground-belt"])
 ultimate_underground_belt.name = "ultimate-underground-belt"
@@ -1940,7 +1994,6 @@ ultimate_underground_belt.structure =
 
 data:extend({ultimate_underground_belt})
 
-data.raw["splitter"]["express-splitter"].next_upgrade = "high-speed-splitter"
 
 ultimate_splitter = table.deepcopy(data.raw["splitter"]["express-splitter"])
 ultimate_splitter.name = "ultimate-splitter"
@@ -2006,7 +2059,7 @@ ultimate_stack_filter_inserter.energy_source =
       drain = "1kW"
     }
 ultimate_stack_filter_inserter.extension_speed = 0.12
-ultimate_stack_filter_inserter.rotation_speed = 0.1
+ultimate_stack_filter_inserter.rotation_speed = 0.05
 ultimate_stack_filter_inserter.hand_base_picture =
     {
       filename = "__EndgameExtension__/graphics/entity/inserter/ultimate-stack-filter-inserter-hand-base.png",
@@ -2047,7 +2100,7 @@ ultimate_inserter.energy_source =
       drain = "1kW"
     }
 ultimate_inserter.extension_speed = 0.12
-ultimate_inserter.rotation_speed = 0.1
+ultimate_inserter.rotation_speed = 0.05
 ultimate_inserter.hand_base_picture =
     {
       filename = "__EndgameExtension__/graphics/entity/inserter/ultimate-inserter-hand-base.png",
@@ -2372,9 +2425,12 @@ advanced_rocket_silo_rocket.flying_acceleration = 0.12
 
 data:extend({advanced_rocket_silo_rocket})
 
+data.raw["locomotive"]["locomotive"].next_upgrade = "locomotive-2"
+data.raw["locomotive"]["locomotive"].fast_replaceable_group = "locomotive"
 
 locomotive_2 = table.deepcopy(data.raw["locomotive"]["locomotive"])
 locomotive_2.name = "locomotive-2"
+locomotive_2.next_upgrade = "locomotive-3"
 locomotive_2.minable = {mining_time = 0.5, result = "locomotive-2"}
 locomotive_2.max_health = 2000
 locomotive_2.max_speed = 1.5
@@ -2384,9 +2440,12 @@ locomotive_2.braking_force = 20
 
 data:extend({locomotive_2})
 
+data.raw["cargo-wagon"]["cargo-wagon"].next_upgrade = "cargo-wagon-2"
+data.raw["cargo-wagon"]["cargo-wagon"].fast_replaceable_group = "cargo-wagon"
 
 cargo_wagon_2 = table.deepcopy(data.raw["cargo-wagon"]["cargo-wagon"])
 cargo_wagon_2.name = "cargo-wagon-2"
+cargo_wagon_2.next_upgrade = "cargo-wagon-3"
 cargo_wagon_2.minable = {mining_time = 0.5, result = "cargo-wagon-2"}
 cargo_wagon_2.inventory_size = 80
 cargo_wagon_2.max_health = 1200
@@ -2395,8 +2454,12 @@ cargo_wagon_2.braking_force = 6
 --cargo_wagon_2.equipment_grid = "wagon-equipment-grid-2"
 data:extend({cargo_wagon_2})
 
+data.raw["fluid-wagon"]["fluid-wagon"].next_upgrade = "fluid-wagon"
+data.raw["fluid-wagon"]["fluid-wagon"].fast_replaceable_group = "fluid-wagon"
+
 fluid_wagon_2 = table.deepcopy(data.raw["fluid-wagon"]["fluid-wagon"])
 fluid_wagon_2.name = "fluid-wagon-2"
+fluid_wagon_2.next_upgrade = "fluid-wagon-3"
 fluid_wagon_2.minable = {mining_time = 0.5, result = "fluid-wagon-2"}
 fluid_wagon_2.capacity = 50000
 fluid_wagon_2.max_health = 1200
@@ -2442,8 +2505,11 @@ fluid_wagon_3.braking_force = 9
 
 data:extend({fluid_wagon_3})
 
+data.raw["electric-pole"]["medium-electric-pole"].next_upgrade = "electric-pole-2"
+
 electric_pole_2 = table.deepcopy(data.raw["electric-pole"]["medium-electric-pole"])
 electric_pole_2.name = "electric-pole-2"
+electric_pole_2.next_upgrade = "electric-pole-3"
 electric_pole_2.minable = {mining_time = 0.1, result = "electric-pole-2"}
 electric_pole_2.maximum_wire_distance = 15
 electric_pole_2.supply_area_distance = 5
@@ -2458,8 +2524,12 @@ electric_pole_3.supply_area_distance = 7
 
 data:extend({electric_pole_3})
 
+data.raw["electric-pole"]["big-electric-pole"].next_upgrade = "big-electric-pole-2"
+data.raw["electric-pole"]["big-electric-pole"].fast_replaceable_group = "electric-pole"
+
 big_electric_pole_2 = table.deepcopy(data.raw["electric-pole"]["big-electric-pole"])
 big_electric_pole_2.name = "big-electric-pole-2"
+big_electric_pole_2.next_upgrade = "big-electric-pole-3"
 big_electric_pole_2.minable = {mining_time = 0.1, result = "big-electric-pole-2"}
 big_electric_pole_2.maximum_wire_distance = 50
 big_electric_pole_2.supply_area_distance = 2
@@ -2474,8 +2544,12 @@ big_electric_pole_3.supply_area_distance = 2
 
 data:extend({big_electric_pole_3})
 
+data.raw["electric-pole"]["substation"].next_upgrade = "substation-2"
+data.raw["electric-pole"]["substation"].fast_replaceable_group = "electric-pole"
+
 substation_2 = table.deepcopy(data.raw["electric-pole"]["substation"])
 substation_2.name = "substation-2"
+substation_2.next_upgrade = "substation-3"
 substation_2.minable = {mining_time = 0.1, result = "substation-2"}
 substation_2.maximum_wire_distance = 22
 substation_2.supply_area_distance = 11
@@ -2490,11 +2564,14 @@ substation_3.supply_area_distance = 13
 
 data:extend({substation_3})
 
+data.raw["assembling-machine"]["oil-refinery"].next_upgrade = "refinery-2"
+data.raw["assembling-machine"]["oil-refinery"].fast_replaceable_group  = "oil-refinery"
 
 refinery_2 = table.deepcopy(data.raw["assembling-machine"]["oil-refinery"])
 refinery_2.name = "refinery-2"
 refinery_2.minable = {mining_time = 0.5, result = "refinery-2"}
 refinery_2.energy_usage = "1000kW"
+refinery_2.next_upgrade = "refinery-3"
 refinery_2.energy_source =
     {
       type = "electric",
@@ -2527,9 +2604,13 @@ refinery_3.crafting_speed = 3
 
 data:extend({refinery_3})
 
+data.raw["assembling-machine"]["centrifuge"].next_upgrade = "centrifuge-2"
+data.raw["assembling-machine"]["centrifuge"].fast_replaceable_group = "centrifuge"
+
 centrifuge_2 = table.deepcopy(data.raw["assembling-machine"]["centrifuge"])
 centrifuge_2.name = "centrifuge-2"
 centrifuge_2.minable = {mining_time = 0.5, result = "centrifuge-2"}
+centrifuge_2.next_upgrade = "centrifuge-3"
 centrifuge_2.energy_usage = "950kW"
 centrifuge_2.energy_source =
     {
@@ -2562,6 +2643,9 @@ centrifuge_3.module_specification =
 centrifuge_3.crafting_speed = 3
 
 data:extend({centrifuge_3})
+
+data.raw["mining-drill"]["pumpjack"].next_upgrade = "pumpjack-2"
+data.raw["mining-drill"]["pumpjack"].fast_replaceable_group = "pumpjack"
 
 pumpjack_2 = table.deepcopy(data.raw["mining-drill"]["pumpjack"])
 pumpjack_2.name = "pumpjack-2"
