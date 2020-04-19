@@ -1,5 +1,6 @@
 require "util"
-
+local hit_effects = require ("__base__.prototypes.entity.demo-hit-effects")
+local sounds = require ("__base__.prototypes.entity.demo-sounds")
 
 
 function logistic_robot_idle(level)
@@ -102,7 +103,7 @@ data:extend({
     speed_multiplier_when_out_of_energy = 0.2,
     min_to_charge = 0.2,
     max_to_charge = 0.95,
-    working_sound = flying_robot_sounds(),
+    working_sound = sounds.flying_robot(0.5),
     cargo_centered = {0.0, 0.2},
     idle = logistic_robot_idle(2),
     idle_with_cargo = logistic_robot_idle_with_cargo(2),
@@ -133,7 +134,7 @@ data:extend({
     speed_multiplier_when_out_of_energy = 0.2,
     min_to_charge = 0.2,
     max_to_charge = 0.95,
-    working_sound = flying_robot_sounds(),
+    working_sound = sounds.flying_robot(0.5),
     cargo_centered = {0.0, 0.2},
     idle = logistic_robot_idle(3),
     idle_with_cargo = logistic_robot_idle_with_cargo(3),
@@ -156,15 +157,15 @@ data:extend({
     max_payload_size = 4,
     speed = 0.4,
     max_energy = "15MJ",
-    energy_per_tick = "35J",
-    energy_per_move = "3000J",
+    energy_per_tick = "10J",
+    energy_per_move = "30J",
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
     transfer_distance = 0.5,
     speed_multiplier_when_out_of_energy = 0.2,
     min_to_charge = 0.2,
     max_to_charge = 0.95,
-    working_sound = flying_robot_sounds(),
+    working_sound = sounds.flying_robot(0.5),
     cargo_centered = {0.0, 0.2},
     idle = logistic_robot_idle(3),
     idle_with_cargo = logistic_robot_idle_with_cargo(3),
@@ -347,7 +348,7 @@ data:extend(
     speed_multiplier_when_out_of_energy = 0.2,
     min_to_charge = 0.2,
     max_to_charge = 0.95,
-    working_sound = flying_robot_sounds(),
+    working_sound = sounds.flying_robot(0.5),
     working_light = {intensity = 0.8, size = 3},
     cargo_centered = {0.0, 0.2},
     construction_vector = {0.30, 0.22},
@@ -381,7 +382,7 @@ data:extend(
     speed_multiplier_when_out_of_energy = 0.2,
     min_to_charge = 0.2,
     max_to_charge = 0.95,
-    working_sound = flying_robot_sounds(),
+    working_sound = sounds.flying_robot(0.5),
     working_light = {intensity = 0.8, size = 3},
     cargo_centered = {0.0, 0.2},
     construction_vector = {0.30, 0.22},
@@ -407,15 +408,15 @@ data:extend(
     max_payload_size = 4,
     speed = 0.4,
     max_energy = "15MJ",
-    energy_per_tick = "35J",
-    energy_per_move = "3000J",
+    energy_per_tick = "10J",
+    energy_per_move = "30J",
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
     transfer_distance = 0.5,
     speed_multiplier_when_out_of_energy = 0.2,
     min_to_charge = 0.2,
     max_to_charge = 0.95,
-    working_sound = flying_robot_sounds(),
+    working_sound = sounds.flying_robot(0.5),
     working_light = {intensity = 0.8, size = 3},
     cargo_centered = {0.0, 0.2},
     construction_vector = {0.30, 0.22},
@@ -575,6 +576,7 @@ high_speed_transport_belt.name = "high-speed-transport-belt"
 high_speed_transport_belt.icon = "__EndgameExtension__/graphics/icons/high-speed-transport-belt.png"
 high_speed_transport_belt.minable = {mining_time = 0.1, result = "high-speed-transport-belt"}
 high_speed_transport_belt.speed = 0.125
+high_speed_transport_belt.icon_size = 32
 high_speed_transport_belt.belt_animation_set = high_speed_belt_animation_set
 high_speed_transport_belt.next_upgrade = "ultimate-transport-belt"
 high_speed_transport_belt.animations =
@@ -596,6 +598,7 @@ high_speed_underground_belt.icon = "__EndgameExtension__/graphics/icons/high-spe
 high_speed_underground_belt.minable = {mining_time = 0.1, result = "high-speed-underground-belt"}
 high_speed_underground_belt.max_distance = 12
 high_speed_underground_belt.speed = 0.125
+high_speed_underground_belt.icon_size = 32
 high_speed_underground_belt.next_upgrade = "ultimate-underground-belt"
 high_speed_underground_belt.structure =
     {
@@ -673,6 +676,7 @@ high_speed_splitter.name = "high-speed-splitter"
 high_speed_splitter.icon = "__EndgameExtension__/graphics/icons/high-speed-splitter.png"
 high_speed_splitter.minable = {mining_time = 0.1, result = "high-speed-splitter"}
 high_speed_splitter.speed = 0.125
+high_speed_splitter.icon_size = 32
 high_speed_splitter.next_upgrade = "ultimate-splitter"
 high_speed_splitter.structure =
     {
@@ -922,6 +926,7 @@ aluminum_pipe.name = "aluminum-pipe"
 aluminum_pipe.icon = "__EndgameExtension__/graphics/icons/aluminum-pipe.png"
 aluminum_pipe.minable = {mining_time = 0.1, result = "aluminum-pipe"}
 aluminum_pipe.next_upgrade = "titanium-pipe"
+aluminum_pipe.icon_size = 32
 aluminum_pipe.fast_replaceable_group = "pipe"
 aluminum_pipe.pictures = pipepictures_a()
 
@@ -934,6 +939,7 @@ aluminum_pipe_to_ground.name = "aluminum-pipe-to-ground"
 aluminum_pipe_to_ground.icon = "__EndgameExtension__/graphics/icons/aluminum-pipe-to-ground.png"
 aluminum_pipe_to_ground.minable = {mining_time = 0.1, result = "aluminum-pipe-to-ground"}
 aluminum_pipe_to_ground.fast_replaceable_group = "pipe"
+aluminum_pipe_to_ground.icon_size = 32
 aluminum_pipe_to_ground.next_upgrade = "titanium-pipe-to-ground"
 aluminum_pipe_to_ground.fluid_box =
     {
@@ -1173,6 +1179,7 @@ titanium_pipe.name = "titanium-pipe"
 titanium_pipe.icon = "__EndgameExtension__/graphics/icons/titanium-pipe.png"
 titanium_pipe.minable = {mining_time = 0.1, result = "titanium-pipe"}
 titanium_pipe.fast_replaceable_group = "pipe"
+titanium_pipe.icon_size = 32
 titanium_pipe.pictures = pipepictures_t()
 
 data:extend({titanium_pipe})
@@ -1182,6 +1189,7 @@ titanium_pipe_to_ground.name = "titanium-pipe-to-ground"
 titanium_pipe_to_ground.icon = "__EndgameExtension__/graphics/icons/titanium-pipe-to-ground.png"
 titanium_pipe_to_ground.minable = {mining_time = 0.1, result = "titanium-pipe-to-ground"}
 titanium_pipe_to_ground.fast_replaceable_group = "pipe"
+titanium_pipe_to_ground.icon_size = 32
 titanium_pipe_to_ground.fluid_box =
     {
       base_area = 1,
@@ -1616,6 +1624,7 @@ high_speed_stack_filter_inserter = table.deepcopy(data.raw["inserter"]["stack-fi
 high_speed_stack_filter_inserter.name = "high-speed-stack-filter-inserter"
 high_speed_stack_filter_inserter.fast_replaceable_group = "inserter"
 high_speed_stack_filter_inserter.icon = "__EndgameExtension__/graphics/icons/high-speed-stack-filter-inserter.png"
+high_speed_stack_filter_inserter.icon_size = 32
 high_speed_stack_filter_inserter.minable = { mining_time = 0.1, result = "high-speed-stack-filter-inserter" }
 high_speed_stack_filter_inserter.energy_per_movement = "15KJ"
 high_speed_stack_filter_inserter.energy_per_rotation = "15KJ"
@@ -1656,6 +1665,7 @@ data:extend({high_speed_stack_filter_inserter})
 
 high_speed_long_handed_inserter = table.deepcopy(data.raw["inserter"]["long-handed-inserter"])
 high_speed_long_handed_inserter.icon = "__EndgameExtension__/graphics/icons/high-speed-long-handed-inserter.png"
+high_speed_long_handed_inserter.icon_size = 32
 high_speed_long_handed_inserter.name = "high-speed-long-handed-inserter"
 high_speed_long_handed_inserter.fast_replaceable_group = "long-handed-inserter"
 high_speed_long_handed_inserter.minable = {mining_time = 0.1, result = "high-speed-long-handed-inserter"}
@@ -1704,6 +1714,8 @@ data:extend({
 
 cryogenic_plant = table.deepcopy(data.raw["assembling-machine"]["chemical-plant"])
 cryogenic_plant.name = "cryogenic-plant"
+cryogenic_plant.icon = "__EndgameExtension__/graphics/icons/cryogenic-plant.png"
+cryogenic_plant.icon_size = 32
 cryogenic_plant.minable = {mining_time = 0.1, result = "cryogenic-plant"}
 cryogenic_plant.module_specification =
     {
@@ -1906,6 +1918,7 @@ ultimate_transport_belt.name = "ultimate-transport-belt"
 ultimate_transport_belt.icon = "__EndgameExtension__/graphics/icons/ultimate-transport-belt.png"
 ultimate_transport_belt.minable = {mining_time = 0.1, result = "ultimate-transport-belt"}
 ultimate_transport_belt.speed = 0.250
+ultimate_transport_belt.icon_size = 32
 ultimate_transport_belt.belt_animation_set = high_speed_belt_animation_set
 ultimate_transport_belt.animations =
     {
@@ -1924,6 +1937,7 @@ ultimate_underground_belt.name = "ultimate-underground-belt"
 ultimate_underground_belt.icon = "__EndgameExtension__/graphics/icons/ultimate-underground-belt.png"
 ultimate_underground_belt.minable = {mining_time = 0.1, result = "ultimate-underground-belt"}
 ultimate_underground_belt.max_distance = 14
+ultimate_underground_belt.icon_size = 32
 ultimate_underground_belt.speed = 0.250
 ultimate_underground_belt.structure =
     {
@@ -2000,6 +2014,7 @@ ultimate_splitter.name = "ultimate-splitter"
 ultimate_splitter.icon = "__EndgameExtension__/graphics/icons/ultimate-splitter.png"
 ultimate_splitter.minable = {mining_time = 0.1, result = "ultimate-splitter"}
 ultimate_splitter.speed = 0.250
+ultimate_splitter.icon_size = 32
 ultimate_splitter.structure =
     {
       north =
@@ -2049,6 +2064,7 @@ data:extend({ultimate_splitter})
 ultimate_stack_filter_inserter = table.deepcopy(data.raw["inserter"]["stack-filter-inserter"])
 ultimate_stack_filter_inserter.name = "ultimate-stack-filter-inserter"
 ultimate_stack_filter_inserter.icon = "__EndgameExtension__/graphics/icons/ultimate-stack-filter-inserter.png"
+ultimate_stack_filter_inserter.icon_size = 32
 ultimate_stack_filter_inserter.minable = { mining_time = 0.1, result = "ultimate-stack-filter-inserter" }
 ultimate_stack_filter_inserter.energy_per_movement = "30KJ"
 ultimate_stack_filter_inserter.energy_per_rotation = "30KJ"
@@ -2058,8 +2074,8 @@ ultimate_stack_filter_inserter.energy_source =
       usage_priority = "secondary-input",
       drain = "1kW"
     }
-ultimate_stack_filter_inserter.extension_speed = 0.12
-ultimate_stack_filter_inserter.rotation_speed = 0.05
+ultimate_stack_filter_inserter.extension_speed = 0.05
+ultimate_stack_filter_inserter.rotation_speed = 0.15
 ultimate_stack_filter_inserter.hand_base_picture =
     {
       filename = "__EndgameExtension__/graphics/entity/inserter/ultimate-stack-filter-inserter-hand-base.png",
@@ -2090,6 +2106,7 @@ data.raw["inserter"]["fast-inserter"].next_upgrade = "ultimate-inserter"
 ultimate_inserter = table.deepcopy(data.raw["inserter"]["fast-inserter"])
 ultimate_inserter.name = "ultimate-inserter"
 ultimate_inserter.icon = "__EndgameExtension__/graphics/icons/ultimate-inserter.png"
+ultimate_inserter.icon_size = 32
 ultimate_inserter.minable = { mining_time = 0.1, result = "ultimate-inserter" }
 ultimate_inserter.energy_per_movement = "30KJ"
 ultimate_inserter.energy_per_rotation = "30KJ"
@@ -2099,8 +2116,8 @@ ultimate_inserter.energy_source =
       usage_priority = "secondary-input",
       drain = "1kW"
     }
-ultimate_inserter.extension_speed = 0.12
-ultimate_inserter.rotation_speed = 0.05
+ultimate_inserter.extension_speed = 0.05
+ultimate_inserter.rotation_speed = 0.15
 ultimate_inserter.hand_base_picture =
     {
       filename = "__EndgameExtension__/graphics/entity/inserter/ultimate-inserter-hand-base.png",
@@ -2141,6 +2158,8 @@ data:extend({
 
 cooling_plant = table.deepcopy(data.raw["assembling-machine"]["chemical-plant"])
 cooling_plant.name = "cooling-plant"
+cooling_plant.icon = "__EndgameExtension__/graphics/icons/cooling-plant.png"
+cooling_plant.icon_size = 32
 cooling_plant.minable = {mining_time = 0.1, result = "cooling-plant"}
 cooling_plant.module_specification =
     {

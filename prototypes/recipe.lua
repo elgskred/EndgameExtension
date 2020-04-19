@@ -1259,8 +1259,8 @@ data:extend({
   		results={
   			{type="fluid", name="carbonized-oil", amount=50}
   		},
-  		icon = "__base__/graphics/icons/crude-oil.png",
-  		icon_size = 32,
+  		icon = "__base__/graphics/icons/fluid/crude-oil.png",
+  		icon_size = 64,
     	order = "m[fluid-chemistry]-c[salt]"
   	},
   	{
@@ -1292,7 +1292,7 @@ data:extend({
 	    	{type="fluid", name="mineral-oil", amount=90}
 	    },
 	    icon = "__base__/graphics/icons/fluid/steam.png",
-	    icon_size = 32,
+	    icon_size = 64,
   	},
   	{
   		type = "recipe",
@@ -1686,8 +1686,10 @@ data:extend({
 		enabled = false,
 		ingredients = 
 		{
-			{"superconducted-electronics", 2},
-			{"flying-robot-frame-4", 1}
+			{"superconducted-electronics", 5},
+			{"flying-robot-frame-4", 1},
+			{"speed-module-7", 5},
+			{"effectivity-module-7", 5}
 		},
 		result = "construction-robot-4"
 	},
@@ -1697,8 +1699,10 @@ data:extend({
 		enabled = false,
 		ingredients = 
 		{
-			{"superconducted-electronics", 2},
-			{"flying-robot-frame-4", 1}
+			{"superconducted-electronics", 5},
+			{"flying-robot-frame-4", 1},
+			{"speed-module-7", 5},
+			{"effectivity-module-7", 5}
 		},
 		result = "logistic-robot-4"
 	},

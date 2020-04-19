@@ -24,6 +24,7 @@ bauxite_ore = table.deepcopy(data.raw.resource['iron-ore'])
 bauxite_ore.map_color = {r=0.457, g=0.699, b=0.816}
 bauxite_ore.name = "bauxite-ore"
 bauxite_ore.icon = "__EndgameExtension__/graphics/icons/bauxite-ore.png"
+bauxite_ore.icon_size = 32
 bauxite_ore.autoplace = resource_autoplace.resource_autoplace_settings{
       name = "bauxite-ore",
       order = "b",
@@ -80,6 +81,7 @@ rutile_ore = table.deepcopy(data.raw["resource"]["iron-ore"])
 rutile_ore.map_color = {r=0.207, g=0.093, b=0.058}
 rutile_ore.name = "rutile-ore"
 rutile_ore.icon = "__EndgameExtension__/graphics/icons/rutile-ore.png"
+rutile_ore.icon_size = 32
 rutile_ore.autoplace = resource_autoplace.resource_autoplace_settings{
       name = "rutile-ore",
       order = "b",
@@ -125,6 +127,7 @@ gold_ore = table.deepcopy(data.raw["resource"]["iron-ore"])
 gold_ore.map_color = {r=0.662, g=0.678, b=0.18}
 gold_ore.name = "gold-ore"
 gold_ore.icon = "__EndgameExtension__/graphics/icons/gold-ore.png"
+gold_ore.icon_size = 32
 gold_ore.autoplace = resource_autoplace.resource_autoplace_settings{
       name = "gold-ore",
       order = "b",
@@ -170,6 +173,7 @@ coltan_ore = table.deepcopy(data.raw["resource"]["iron-ore"])
 coltan_ore.map_color = {r=0.257, g=0.527, b=0.960}
 coltan_ore.name = "coltan-ore"
 coltan_ore.icon = "__EndgameExtension__/graphics/icons/coltan-ore.png"
+coltan_ore.icon_size = 32
 coltan_ore.autoplace = resource_autoplace.resource_autoplace_settings{
       name = "coltan-ore",
       order = "b",

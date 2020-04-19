@@ -2428,6 +2428,10 @@ data:extend(
         type = "unlock-recipe",
         recipe = "deep-space-satellite"
       },
+      {
+        type = "unlock-recipe",
+        recipe = "advanced-rocket-silo"
+      },
     },
     prerequisites = {"ee-advanced-rocket-structure", "ee-solar-energy-5", "ee-advanced-rocket-control-unit", "ee-enriched-rocket-fuel"},
     unit =
@@ -3386,6 +3390,7 @@ data:extend(
       time = 60
     },
     upgrade = true,
+    max_level = "infinite",
     order = "c-o-h"
   },
   {
