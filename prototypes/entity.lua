@@ -2444,12 +2444,12 @@ advanced_rocket_silo_rocket.flying_acceleration = 0.12
 
 data:extend({advanced_rocket_silo_rocket})
 
-data.raw["locomotive"]["locomotive"].next_upgrade = "locomotive-2"
+--data.raw["locomotive"]["locomotive"].next_upgrade = "locomotive-2"
 data.raw["locomotive"]["locomotive"].fast_replaceable_group = "locomotive"
 
 locomotive_2 = table.deepcopy(data.raw["locomotive"]["locomotive"])
 locomotive_2.name = "locomotive-2"
-locomotive_2.next_upgrade = "locomotive-3"
+--locomotive_2.next_upgrade = "locomotive-3"
 locomotive_2.minable = {mining_time = 0.5, result = "locomotive-2"}
 locomotive_2.max_health = 2000
 locomotive_2.max_speed = 1.5
@@ -2459,12 +2459,12 @@ locomotive_2.braking_force = 20
 
 data:extend({locomotive_2})
 
-data.raw["cargo-wagon"]["cargo-wagon"].next_upgrade = "cargo-wagon-2"
+--data.raw["cargo-wagon"]["cargo-wagon"].next_upgrade = "cargo-wagon-2"
 data.raw["cargo-wagon"]["cargo-wagon"].fast_replaceable_group = "cargo-wagon"
 
 cargo_wagon_2 = table.deepcopy(data.raw["cargo-wagon"]["cargo-wagon"])
 cargo_wagon_2.name = "cargo-wagon-2"
-cargo_wagon_2.next_upgrade = "cargo-wagon-3"
+--cargo_wagon_2.next_upgrade = "cargo-wagon-3"
 cargo_wagon_2.minable = {mining_time = 0.5, result = "cargo-wagon-2"}
 cargo_wagon_2.inventory_size = 80
 cargo_wagon_2.max_health = 1200
@@ -2473,12 +2473,12 @@ cargo_wagon_2.braking_force = 6
 --cargo_wagon_2.equipment_grid = "wagon-equipment-grid-2"
 data:extend({cargo_wagon_2})
 
-data.raw["fluid-wagon"]["fluid-wagon"].next_upgrade = "fluid-wagon"
+--data.raw["fluid-wagon"]["fluid-wagon"].next_upgrade = "fluid-wagon"
 data.raw["fluid-wagon"]["fluid-wagon"].fast_replaceable_group = "fluid-wagon"
 
 fluid_wagon_2 = table.deepcopy(data.raw["fluid-wagon"]["fluid-wagon"])
 fluid_wagon_2.name = "fluid-wagon-2"
-fluid_wagon_2.next_upgrade = "fluid-wagon-3"
+--fluid_wagon_2.next_upgrade = "fluid-wagon-3"
 fluid_wagon_2.minable = {mining_time = 0.5, result = "fluid-wagon-2"}
 fluid_wagon_2.capacity = 50000
 fluid_wagon_2.max_health = 1200

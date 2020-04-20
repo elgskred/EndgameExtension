@@ -1,15 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2020.04.20
+  Changes:
+    - Removed next_upgrade from all roling stock entities.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
-Date: 19. 04. 2020
+Date: 2020.04.19
   Changes:
     - Updated mod to 0.18.
     - Finaly fixed the rotation speed of ultimate inserters.
     - Made the tier 4 robots far more energy efficient. Increased the recipe cost to compensate for increased efficiency.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.5
-Date: 03. 04. 2020
+Date: 2020.04.03
   Changes:
     - Added fast replace group to most entities.
     - Changed recipe for high speed inserters to use previous tier inserters.
     - Increased the rotation speed of ultimate inserters.
----------------------------------------------------------------------------------------------------
