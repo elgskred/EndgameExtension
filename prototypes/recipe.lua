@@ -1707,20 +1707,6 @@ data:extend({
 		result = "logistic-robot-4"
 	},
 	{
-		type = "recipe",
-		name = "compressed-science-pack",
-		enabled = false,
-		ingredients = 
-		{
-			{"automation-science-pack", 1},
-          	{"logistic-science-pack", 1},
-          	{"chemical-science-pack", 1},
-          	{"utility-science-pack", 1},
-          	{"space-science-pack", 1}
-		},
-		result = "compressed-science-pack"
-	},
-	{
     type = "recipe",
     name = "refinery-2",
     energy_required = 8,
